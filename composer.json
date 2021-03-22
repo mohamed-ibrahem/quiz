@@ -1,0 +1,54 @@
+{
+    "name": "getsircles/quiz",
+    "description": "Package to build a quiz system",
+    "keywords": [
+        "getsircles",
+        "quiz"
+    ],
+    "homepage": "https://github.com/getsircles/quiz",
+    "license": "The Unlicense",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Mohamed Ibrahem",
+            "email": "mohamed.ibrahim@getsircles.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "illuminate/support": "^6.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^4.0",
+        "phpunit/phpunit": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Getsircles\\Quiz\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Getsircles\\Quiz\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Getsircles\\Quiz\\QuizServiceProvider"
+            ],
+            "aliases": {
+                "Quiz": "Getsircles\\Quiz\\QuizFacade"
+            }
+        }
+    }
+}
